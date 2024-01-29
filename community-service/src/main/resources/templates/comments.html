@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <title>Posts List</title>
+</head>
+<body>
+<h2>Posts List</h2>
+<div>
+  <div th:each="comment : ${comments}">
+    <details>
+      <summary>
+        <strong th:text="${'Comment ID: ' + comment.id + ' - ' + comment.name}"></strong>
+      </summary>
+      <p th:if="${comment.email}" th:text="${'Email: ' + comment.email}"></p>
+      <p th:if="${comment.body}" th:text="${'Body: ' + comment.body}"></p>
+    </details>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <title>Posts List</title>
+</head>
+<body>
+<h2>Posts List</h2>
+<div>
+  <div th:each="post : ${posts}">
+    <details>
+      <summary>
+        <strong th:text="${'Post ID: ' + post.id + ' - ' + post.title}"></strong>
+      </summary>
+      <p th:if="${post.body}" th:text="${'Body: ' + post.body}"></p>
+    </details>
+  </div>
+</div>
+</body>
+</html>

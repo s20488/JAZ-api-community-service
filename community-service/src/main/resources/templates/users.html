@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>User List</title>
+</head>
+<body>
+<h2>User List</h2>
+<div>
+    <div th:each="user : ${users}">
+        <details>
+            <summary>
+                <strong th:text="${'User ID: ' + user.id + ' - ' + user.name}"></strong>
+            </summary>
+            <ul>
+                <li th:if="${user.username}" th:text="${'Username: ' + user.username}"></li>
+                <li th:if="${user.email}" th:text="${'Email: ' + user.email}"></li>
+                <li th:if="${user.address}">
+                    <details>
+                        <summary>Address</summary>
+                        <ul>
+                            <li th:if="${user.address.street}" th:text="${'Street: ' + user.address.street}"></li>
+                            <li th:if="${user.address.suite}" th:text="${'Suite: ' + user.address.suite}"></li>
+                            <li th:if="${user.address.city}" th:text="${'City: ' + user.address.city}"></li>
+                            <li th:if="${user.address.zipcode}" th:text="${'Zipcode: ' + user.address.zipcode}"></li>
+                            <li th:if="${user.address.geo}" th:text="${'Geo Lat: ' + user.address.geo.lat}"></li>
+                            <li th:if="${user.address.geo}" th:text="${'Geo Lng: ' + user.address.geo.lng}"></li>
+                        </ul>
+                    </details>
+                </li>
+                <li th:if="${user.phone}" th:text="${'Phone: ' + user.phone}"></li>
+                <li th:if="${user.website}" th:text="${'Website: ' + user.website}"></li>
+                <li th:if="${user.company}">
+                    <details>
+                        <summary>Company</summary>
+                        <ul>
+                            <li th:if="${user.company.name}" th:text="${'Name: ' + user.company.name}"></li>
+                            <li th:if="${user.company.catchPhrase}" th:text="${'Catch Phrase: ' + user.company.catchPhrase}"></li>
+                            <li th:if="${user.company.bs}" th:text="${'BS: ' + user.company.bs}"></li>
+                        </ul>
+                    </details>
+                </li>
+                <li th:if="${user.posts}">
+                    <details>
+                        <summary>Posts</summary>
+                        <ul>
+                            <li th:each="post : ${user.posts}" th:if="${post}">
+                                <details>
+                                    <summary th:if="${post.title}" th:text="${'Title: ' + post.title}"></summary>
+                                    <p th:if="${post.body}" th:text="${'Body: ' + post.body}"></p>
+                                    <ul>
+                                        <li th:each="comment : ${post.comments}" th:if="${comment}">
+                                            <span th:if="${comment.name}" th:text="${'Name: ' + comment.name}"></span>
+                                            <br/>
+                                            <span th:if="${comment.email}" th:text="${'Email: ' + comment.email}"></span>
+                                            <br/>
+                                            <span th:if="${comment.body}" th:text="${'Comment: ' + comment.body}"></span>
+                                            <br/>
+                                        </li>
+                                    </ul>
+                                </details>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </details>
+    </div>
+</div>
+</body>
+</html>
