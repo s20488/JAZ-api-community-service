@@ -1,1 +1,10 @@
-Repozytorium zawiera projekt oparty na Spring REST API. Projekt jest przeznaczony do interakcji z danymi z JSONPlaceholder, który jest darmowym API REST online, które zwraca losowe dane w formacie JSON.
+# Spring REST API z JSONPlaceholder i HSQLDB
+
+To repozytorium zawiera projekt oparty na Spring REST API, który współpracuje z danymi z JSONPlaceholder i używa bazy danych HSQLDB.
+
+## Uruchamianie lokalnej bazy danych
+Wpisz poniższe polecenie w konsoli w środowisku:
+
+```bash
+java -cp "...\hsqldb\lib\hsqldb.jar" org.hsqldb.server.Server --database.0 "file:communitydb" --dbname.0 communitydb --port 9002
+```
