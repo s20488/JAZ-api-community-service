@@ -1,1 +1,1 @@
-
+Repozytorium zawiera projekt oparty na Spring REST API. Projekt jest przeznaczony do interakcji z danymi z JSONPlaceholder, który jest darmowym API REST online, które zwraca losowe dane w formacie JSON.
