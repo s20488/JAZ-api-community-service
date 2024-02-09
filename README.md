@@ -1,6 +1,6 @@
 # Spring REST API z JSONPlaceholder i HSQLDB
 
-To repozytorium zawiera projekt oparty na Spring REST API, który współpracuje z danymi z JSONPlaceholder i używa bazy danych HSQLDB.
+Projekt jest oparty na Spring REST API, który współpracuje z danymi z JSONPlaceholder i używa bazy danych HSQLDB.
 
 ## Uruchamianie lokalnej bazy danych
 Wpisz poniższe polecenie w konsoli w środowisku:
